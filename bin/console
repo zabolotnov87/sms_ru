@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+require 'pry'
+require 'logger'
+require 'sms_ru'
+
+SmsRu.configure do |config|
+  config.api_endpoint = ENV['API_ENDPOINT']
+  config.api_id = ENV['API_ID']
+  config.logger = Logger.new(STDERR)
+end
+
+# Example of usage:
+#
+# sms = SmsRu::Requests::SendSms.new.tap do |request|
+#   request.to = '79991234567'
+#   request.message = 'hello world'
+# end
+#
+# SmsRu.client.send_sms(sms)
+
+Pry.start(self)
