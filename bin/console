@@ -6,9 +6,9 @@ require 'logger'
 require 'sms_ru'
 
 SmsRu.configure do |config|
-  config.api_endpoint = ENV['API_ENDPOINT']
-  config.api_id = ENV['API_ID']
-  config.logger = Logger.new(STDERR)
+  config.api_endpoint = ENV.fetch('API_ENDPOINT', 'https://sms.ru/')
+  config.api_id = ENV.fetch('API_ID', nil)
+  config.logger = Logger.new($stderr)
 end
 
 # Example of usage:

@@ -1,7 +1,5 @@
 require_relative 'client/models'
 require_relative 'client/api'
-require_relative 'client/middlewares/handle_connection_error'
-require_relative 'client/middlewares/handle_http_error'
 
 module SmsRu
   class Client
@@ -40,12 +38,12 @@ module SmsRu
     end
 
     def setup_error_handling!(connection)
-      connection.use(:sms_ru_handle_connection_error)
-      connection.response(:sms_ru_handle_http_error)
+      connection.response(:raise_error)
     end
 
     def setup_log_filters!(connection)
-      connection.response(:logger, logger) do |logger|
+      options = { headers: true, bodies: true, log_level: :debug }
+      connection.response(:logger, logger, options) do |logger|
         logger.filter(/(api_id=)([^&]+)/, '\1[FILTERED]')
       end
     end

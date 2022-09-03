@@ -1,5 +1,6 @@
 AllCops:
-  TargetRubyVersion: 2.6
+  TargetRubyVersion: 3
+  NewCops: enable
   Exclude:
     - bin/rspec
     - bin/rubocop
@@ -25,3 +26,7 @@ Style/TrailingCommaInArrayLiteral:
 
 Metrics/LineLength:
   Max: 100
+
+Naming/FileName:
+  Exclude:
+    - 'lib/sms-ru-client.rb'

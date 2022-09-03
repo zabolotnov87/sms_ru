@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sms.ru/sms/send?api_id=<API_ID>&json=1&msg=hello+world&to=<PHONE>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx
+      date:
+      - Sat, 03 Sep 2022 12:26:57 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      cache-control:
+      - no-store
+      set-cookie:
+      - dev_id=A95035EB-C35E-1975-FC97-F61C157811D4; expires=Mon, 12-Jul-2032 12:26:56
+        GMT; Max-Age=311040000; path=/; domain=.sms.ru
+      sms-api:
+      - '1'
+      trail:
+      - 10.0.0.62:52060 w15
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+            "status": "OK",
+            "status_code": 100,
+            "sms": {
+                "<PHONE>": {
+                    "status": "OK",
+                    "status_code": 100,
+                    "sms_id": "<SMS_ID>",
+                    "cost": "3.50"
+                }
+            },
+            "balance": 123456.123
+        }
+  recorded_at: Sat, 03 Sep 2022 12:26:57 GMT
+recorded_with: VCR 6.1.0

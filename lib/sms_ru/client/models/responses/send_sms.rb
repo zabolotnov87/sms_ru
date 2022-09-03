@@ -4,11 +4,13 @@ module SmsRu
       module Responses
         class SendSms < Base
           class Error < StandardError
-            attr_reader :status, :code
-            def initialize(status, code)
+            attr_reader :status, :code, :text
+
+            def initialize(status, code, text)
               @status = status
               @code = code
-              super("status: #{status}, code: #{code}")
+              @text = text
+              super("status: #{status}, code: #{code}, text: #{text}")
             end
           end
 
@@ -16,6 +18,7 @@ module SmsRu
 
           property :status
           property :code, from: 'status_code'
+          property :text, from: 'status_text'
           property :balance
 
           def success?
@@ -25,7 +28,7 @@ module SmsRu
           def to_error
             return if success?
 
-            Error.new(status, code)
+            Error.new(status, code, text)
           end
         end
       end

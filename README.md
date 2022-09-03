@@ -11,7 +11,7 @@ NOTE: current implementation does not support ALL features, and includes only:
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'sms_ru'
+gem 'sms-ru-client'
 ```
 
 And then execute:
@@ -20,7 +20,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install sms_ru
+    $ gem install sms-ru-client
 
 ## Configuration
 
