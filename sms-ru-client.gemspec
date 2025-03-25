@@ -1,7 +1,7 @@
 Gem::Specification.new do |spec|
   spec.required_ruby_version = '~> 3.0'
   spec.name                  = 'sms-ru-client'
-  spec.version               = '1.0.1'
+  spec.version               = '1.1.0'
   spec.authors               = ['Sergey Zaboltonov']
   spec.email                 = ['sergey.zabolotnov@gmail.com']
 

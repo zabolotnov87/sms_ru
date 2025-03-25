@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sms.ru/code/call?api_id=<API_ID>&ip=71.173.10.25&json=1&phone=<PHONE>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.8.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 25 Mar 2025 08:57:28 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      vary:
+      - Accept-Encoding
+      cache-control:
+      - no-store
+      set-cookie:
+      - dev_id=E9092232-09F4-D32C-C764-7B3023B72AFB; expires=Thu, 01-Feb-2035 08:57:28
+        GMT; Max-Age=311040000; path=/; domain=.sms.ru
+      sms-api:
+      - '1'
+      trail:
+      - 10.0.0.61/w18
+      x-backend:
+      - www
+      x-server:
+      - w18
+      server:
+      - CERN/3.0
+      alt-svc:
+      - h3=":443"; ma=60
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+            "status": "OK",
+            "code": 5289,
+            "call_id": "202513-1000000",
+            "balance": 1735.97,
+            "cost": 0.4
+        }
+  recorded_at: Tue, 25 Mar 2025 08:57:28 GMT
+recorded_with: VCR 6.2.0
